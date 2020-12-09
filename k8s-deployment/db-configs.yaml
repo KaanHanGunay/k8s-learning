@@ -5,3 +5,4 @@ metadata:
 type: Opaque
 data:
   postgresPassword: cGFyb2xhMTIz #parola123
+  potsgresUserName: cG9zdGdyZXM= #postgres

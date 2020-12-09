@@ -17,4 +17,8 @@ spec:
           backend:
             serviceName: sp-test-2-service
             servicePort: 8080
+        - path: /person-service
+          backend:
+            serviceName: sp-test-3-service
+            servicePort: 8080
 

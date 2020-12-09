@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sp-test-3-deployment
+  labels:
+    app: sp-test-3-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sp-test-3-deployment
+  template:
+    metadata:
+      labels:
+        app: sp-test-3-deployment
+    spec:
+      containers:
+        - name: sp-test-3-deployment
+          image: kaanhangunay/sp-test:5.0
+          env:
+            - name: spring.datasource.url
+              valueFrom:
+                configMapKeyRef:
+                  name: my-configs
+                  key: service3DataSource
+            - name: spring.datasource.username
+              valueFrom:
+                secretKeyRef:
+                  name: db-configs
+                  key: potsgresUserName
+            - name: spring.datasource.password
+              valueFrom:
+                secretKeyRef:
+                  name: db-configs
+                  key: postgresPassword
+          ports:
+            - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: sp-test-3-service
+spec:
+  selector:
+    app: sp-test-3-deployment
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080

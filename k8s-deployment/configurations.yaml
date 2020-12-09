@@ -4,3 +4,4 @@ metadata:
   name: my-configs
 data:
   firstProjectClient: sp-test-service:8080
+  service3DataSource: jdbc:postgresql://postgres-service:5432/postgres
