@@ -27,7 +27,10 @@ spec:
               subPath: postgres
           env:
             - name: POSTGRES_PASSWORD
-              value: secret
+              valueFrom:
+                secretKeyRef:
+                  name: db-configs
+                  key: postgresPassword
 ---
 apiVersion: v1
 kind: Service

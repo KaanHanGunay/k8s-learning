@@ -19,7 +19,10 @@ spec:
           image: kaanhangunay/sp-test:3.3
           env:
             - name: firstProjectClient
-              value: sp-test-service:8080
+              valueFrom:
+                configMapKeyRef:
+                  name: my-configs
+                  key: firstProjectClient
           ports:
             - containerPort: 8080
 ---
