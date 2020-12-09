@@ -5,7 +5,7 @@ metadata:
   labels:
     app: sp-test-deployment
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
       app: sp-test-deployment
@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: sp-test-deployment
-          image: kaanhangunay/sp-test:4.1
+          image: kaanhangunay/sp-test:4.4
           ports:
             - containerPort: 8080
 ---
