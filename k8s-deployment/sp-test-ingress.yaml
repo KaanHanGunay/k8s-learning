@@ -1,0 +1,20 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: sp-test-ingress
+  annotations:
+    ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - host: localhost
+    http:
+      paths:
+        - path: /service1
+          backend:
+            serviceName: sp-test-service
+            servicePort: 8080
+        - path: /service2
+          backend:
+            serviceName: sp-test-2-service
+            servicePort: 8080
+
