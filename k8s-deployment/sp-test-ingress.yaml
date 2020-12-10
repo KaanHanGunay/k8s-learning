@@ -1,4 +1,4 @@
-apiVersion: extensions/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: sp-test-ingress
@@ -11,18 +11,25 @@ spec:
       paths:
         - path: /service1
           backend:
-            serviceName: sp-test-service
-            servicePort: 8080
+            service:
+              name: sp-test-service
+              port:
+                number: 8080
         - path: /service2
           backend:
-            serviceName: sp-test-2-service
-            servicePort: 8080
+            service:
+              name: sp-test-2-service
+              port:
+                number: 8080
         - path: /person-service
           backend:
-            serviceName: sp-test-3-service
-            servicePort: 8080
+            service:
+              name: sp-test-3-service
+              port:
+                number: 8080
         - path: /
           backend:
-            serviceName: sp-ang-service
-            servicePort: 3000
-
+            service:
+              name: sp-ang-service
+              port:
+                number: 8080
