@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sp-ang-deployment
+  labels:
+    app: sp-ang-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sp-ang-deployment
+  template:
+    metadata:
+      labels:
+        app: sp-ang-deployment
+    spec:
+      containers:
+        - name: sp-ang-deployment
+          image: kaanhangunay/sp-test:6.2
+          ports:
+            - containerPort: 3000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: sp-ang-service
+spec:
+  selector:
+    app: sp-ang-deployment
+  ports:
+    - protocol: TCP
+      port: 3000
+      targetPort: 3000

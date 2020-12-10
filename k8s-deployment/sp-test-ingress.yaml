@@ -21,4 +21,8 @@ spec:
           backend:
             serviceName: sp-test-3-service
             servicePort: 8080
+        - path: /
+          backend:
+            serviceName: sp-ang-service
+            servicePort: 3000
 
