@@ -10,26 +10,30 @@ spec:
     http:
       paths:
         - path: /service1
+          pathType: Prefix
           backend:
             service:
               name: sp-test-service
               port:
                 number: 8080
         - path: /service2
+          pathType: Prefix
           backend:
             service:
               name: sp-test-2-service
               port:
                 number: 8080
         - path: /person-service
+          pathType: Prefix
           backend:
             service:
               name: sp-test-3-service
               port:
                 number: 8080
         - path: /
+          pathType: Prefix
           backend:
             service:
               name: sp-ang-service
               port:
-                number: 8080
+                number: 3000
