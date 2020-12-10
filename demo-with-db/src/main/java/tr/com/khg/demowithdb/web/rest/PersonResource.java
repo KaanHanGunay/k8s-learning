@@ -1,9 +1,7 @@
 package tr.com.khg.demowithdb.web.rest;
 
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import tr.com.khg.demowithdb.domain.Person;
 import tr.com.khg.demowithdb.service.PersonService;
 
@@ -22,5 +20,10 @@ public class PersonResource {
     @GetMapping("/all")
     public ResponseEntity<List<Person>> getPersonList() {
         return ResponseEntity.ok().body(personService.getAllPeople());
+    }
+
+    @PostMapping("/create")
+    public ResponseEntity<Person> create(@RequestBody Person person) {
+        return ResponseEntity.ok().body(personService.create(person));
     }
 }

@@ -8,4 +8,6 @@ public interface PersonService {
 
     List<Person> getAllPeople();
 
+    Person create(Person person);
+
 }

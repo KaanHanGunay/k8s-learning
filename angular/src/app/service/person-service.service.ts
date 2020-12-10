@@ -10,11 +10,15 @@ type EntityArrayResponseType = HttpResponse<IPerson[]>;
   providedIn: 'root'
 })
 export class PersonServiceService {
-  public resourceUrl = 'http://localhost/person-service/api/all';
+  public resourceUrl = 'http://localhost/person-service/api';
 
   constructor(private http: HttpClient) { }
 
   query(): Observable<EntityArrayResponseType> {
-    return this.http.get<IPerson[]>(this.resourceUrl, { observe: 'response' });
+    return this.http.get<IPerson[]>(this.resourceUrl + '/all', { observe: 'response' });
+  }
+
+  create(person: IPerson): Observable<EntityResponseType> {
+    return this.http.post<IPerson>(this.resourceUrl + '/create', person, { observe: 'response' });
   }
 }

@@ -1,0 +1,4 @@
+<div *ngIf="people">
+  <h2 *ngFor="let person of people">{{ person.name }}</h2>
+</div>
+<button (click)="addNewPerson()">Add</button>

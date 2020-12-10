@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: sp-test-3-deployment
-          image: kaanhangunay/sp-test:5.1
+          image: kaanhangunay/sp-test:5.2
           env:
             - name: spring.datasource.url
               valueFrom:

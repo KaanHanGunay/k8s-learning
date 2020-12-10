@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: sp-ang-deployment
-          image: kaanhangunay/sp-test:6.2
+          image: kaanhangunay/sp-test:6.4
           ports:
             - containerPort: 3000
 ---
