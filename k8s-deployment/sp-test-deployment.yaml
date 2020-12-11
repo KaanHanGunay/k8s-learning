@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: sp-test-deployment
-          image: kaanhangunay/sp-test:4.5
+          image: kaanhangunay/sp-test:4.6
           ports:
             - containerPort: 8080
 ---

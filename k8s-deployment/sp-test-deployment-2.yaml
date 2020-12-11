@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: sp-test-2-deployment
-          image: kaanhangunay/sp-test:3.4
+          image: kaanhangunay/sp-test:3.5
           env:
             - name: firstProjectClient
               valueFrom:
